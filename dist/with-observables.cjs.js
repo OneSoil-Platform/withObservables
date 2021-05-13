@@ -105,7 +105,7 @@ function scheduleForCleanup(fn) {
 }
 
 var toObservable = function toObservable(value) {
-  return typeof value.observe === 'function' ? value.observe() : value;
+  return value && typeof value.observe === 'function' ? value.observe() : value;
 };
 
 function identicalArrays(left, right) {

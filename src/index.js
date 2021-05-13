@@ -26,7 +26,7 @@ type WithObservablesSynchronized<Props, ObservableProps> = HOC<
 >
 
 const toObservable = (value: any): Observable<any> =>
-  typeof value && value.observe === 'function' ? value.observe() : value
+  value && typeof value.observe === 'function' ? value.observe() : value
 
 function identicalArrays<T, V: T[]>(left: V, right: V): boolean {
   if (left.length !== right.length) {
